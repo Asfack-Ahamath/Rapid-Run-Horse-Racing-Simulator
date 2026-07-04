@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.horse_racing.controller.ManageHorseController"
+      spacing="0"
+      prefWidth="420" maxWidth="420" minWidth="420"
+      style="-fx-background-color: #fdfcf9;
+             -fx-effect: dropshadow(gaussian, rgba(13,74,46,0.18), 16, 0, 0, 4);
+             -fx-border-color: rgba(13,74,46,0.12); -fx-border-width: 1;">
+
+    <VBox spacing="4" style="-fx-background-color: linear-gradient(to bottom, #0d4a2e 0%, #1a5c3f 100%); -fx-padding: 18 22 16;">
+        <Label fx:id="dialogTitleLabel" text="Add Horse"
+               style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+        <Label text="ID, roster details, group, and optional photo"
+               style="-fx-font-size: 11px; -fx-text-fill: rgba(255,255,255,0.88);"/>
+    </VBox>
+
+    <VBox spacing="16" style="-fx-padding: 18 22 14;">
+        <GridPane hgap="10" vgap="12">
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" minWidth="72" prefWidth="88"/>
+                <ColumnConstraints hgrow="ALWAYS" minWidth="200" prefWidth="260"/>
+            </columnConstraints>
+            <Label text="ID" GridPane.columnIndex="0" GridPane.rowIndex="0"
+                   style="-fx-font-weight: bold; -fx-text-fill: #4a5d4a; -fx-font-size: 12px;"/>
+            <TextField fx:id="idField" promptText="Auto-generated" editable="false" focusTraversable="false"
+                       GridPane.columnIndex="1" GridPane.rowIndex="0" GridPane.hgrow="ALWAYS" maxWidth="Infinity"
+                       styleClass="dialog-field"/>
+            <Label text="Name" GridPane.columnIndex="0" GridPane.rowIndex="1"
+                   style="-fx-font-weight: bold; -fx-text-fill: #4a5d4a; -fx-font-size: 12px;"/>
+            <TextField fx:id="nameField" promptText="Horse name"
+                       GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.hgrow="ALWAYS" maxWidth="Infinity"
+                       styleClass="dialog-field"/>
+            <Label text="Jockey" GridPane.columnIndex="0" GridPane.rowIndex="2"
+                   style="-fx-font-weight: bold; -fx-text-fill: #4a5d4a; -fx-font-size: 12px;"/>
+            <TextField fx:id="jockeyField" promptText="Jockey name"
+                       GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.hgrow="ALWAYS" maxWidth="Infinity"
+                       styleClass="dialog-field"/>
+            <Label text="Age" GridPane.columnIndex="0" GridPane.rowIndex="3"
+                   style="-fx-font-weight: bold; -fx-text-fill: #4a5d4a; -fx-font-size: 12px;"/>
+            <Spinner fx:id="ageSpinner" editable="false" prefWidth="100" prefHeight="36" minHeight="36" maxHeight="36"
+                     GridPane.columnIndex="1" GridPane.rowIndex="3" styleClass="dialog-spinner"/>
+            <Label text="Breed" GridPane.columnIndex="0" GridPane.rowIndex="4"
+                   style="-fx-font-weight: bold; -fx-text-fill: #4a5d4a; -fx-font-size: 12px;"/>
+            <TextField fx:id="breedField" promptText="Breed"
+                       GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.hgrow="ALWAYS" maxWidth="Infinity"
+                       styleClass="dialog-field"/>
+            <Label text="Race record" GridPane.columnIndex="0" GridPane.rowIndex="5"
+                   style="-fx-font-weight: bold; -fx-text-fill: #4a5d4a; -fx-font-size: 12px;"/>
+            <TextField fx:id="raceRecordField" promptText="Wins, notes..."
+                       GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.hgrow="ALWAYS" maxWidth="Infinity"
+                       styleClass="dialog-field"/>
+            <Label text="Group" GridPane.columnIndex="0" GridPane.rowIndex="6" GridPane.valignment="TOP"
+                   style="-fx-font-weight: bold; -fx-text-fill: #4a5d4a; -fx-font-size: 12px; -fx-padding: 4 0 0 0;"/>
+            <FlowPane hgap="8" vgap="8" prefWrapLength="260" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                <RadioButton fx:id="groupARadioButton" text="A" styleClass="group-radio"/>
+                <RadioButton fx:id="groupBRadioButton" text="B" styleClass="group-radio"/>
+                <RadioButton fx:id="groupCRadioButton" text="C" styleClass="group-radio"/>
+                <RadioButton fx:id="groupDRadioButton" text="D" styleClass="group-radio"/>
+            </FlowPane>
+            <Label text="Photo" GridPane.columnIndex="0" GridPane.rowIndex="7" GridPane.valignment="CENTER"
+                   style="-fx-font-weight: bold; -fx-text-fill: #4a5d4a; -fx-font-size: 12px;"/>
+            <HBox spacing="12" alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                <StackPane style="-fx-background-color: #e8e4d8; -fx-padding: 4;">
+                    <ImageView fx:id="imageView" fitHeight="56" fitWidth="56" preserveRatio="true"/>
+                </StackPane>
+                <Button fx:id="browseButton" text="Browse..." onAction="#browseImage" styleClass="btn-secondary"
+                        style="-fx-padding: 8 14;"/>
+            </HBox>
+        </GridPane>
+    </VBox>
+
+    <Region prefHeight="1" maxHeight="1" minHeight="1" style="-fx-background-color: rgba(13,74,46,0.08);"/>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT" style="-fx-padding: 14 20 18;">
+        <Button fx:id="cancelButton" text="Cancel" onAction="#cancel" styleClass="btn-secondary"
+                style="-fx-padding: 10 20;"/>
+        <Button fx:id="saveButton" text="Save" onAction="#save" styleClass="btn-primary"
+                style="-fx-padding: 10 22;"/>
+    </HBox>
+</VBox>

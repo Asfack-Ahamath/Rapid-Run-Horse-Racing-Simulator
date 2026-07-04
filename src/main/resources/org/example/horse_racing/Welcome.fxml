@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.horse_racing.controller.WelcomeController"
+            minWidth="480" minHeight="360" prefWidth="520" prefHeight="420"
+            style="-fx-background-color: linear-gradient(to bottom right, #0d4a2e 0%, #1a6b4a 20%, #165834 40%, #244a18 60%, #1a5c3f 80%, #0d2818 100%);">
+    <center>
+        <VBox alignment="CENTER" spacing="16" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets top="24" right="24" bottom="24" left="24"/>
+            </padding>
+            <Label text="RAPID RUN" styleClass="welcome-title"
+                   style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: white; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 4, 0, 1, 1);"/>
+            <Label text="Horse Racing Simulator" style="-fx-text-fill: rgba(255,255,255,0.95); -fx-font-size: 14px;"/>
+            <Region VBox.vgrow="ALWAYS" minHeight="8"/>
+            <VBox alignment="CENTER_LEFT" spacing="12" styleClass="welcome-card"
+                  style="-fx-background-color: rgba(253,252,249,0.98); -fx-background-radius: 12; -fx-padding: 20; -fx-min-width: 260; -fx-max-width: 420; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 8, 0, 0, 3);">
+                <Label text="Welcome to the Track" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #0d4a2e;"/>
+                <Label text="Manage your stable, select champions, and watch them race in real-time." wrapText="true"
+                       style="-fx-text-fill: #6b5d4b; -fx-font-size: 12px;"/>
+                <Separator style="-fx-background-color: #e8e4d8;"/>
+                <Label text="Dashboard — View stable statistics" wrapText="true" style="-fx-text-fill: #2c2416; -fx-font-size: 11px;"/>
+                <Label text="View Horses — Browse, add, edit horses" wrapText="true" style="-fx-text-fill: #2c2416; -fx-font-size: 11px;"/>
+                <Label text="Simulate Race — Animated real-time racing" wrapText="true" style="-fx-text-fill: #2c2416; -fx-font-size: 11px;"/>
+            </VBox>
+            <Region VBox.vgrow="ALWAYS" minHeight="8"/>
+            <Button text="Get Started" onAction="#welcome" styleClass="btn-accent"
+                    style="-fx-font-size: 14px; -fx-padding: 12 36; -fx-background-radius: 8;"/>
+        </VBox>
+    </center>
+</BorderPane>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.horse_racing.controller.MainController"
+            minWidth="900" minHeight="600" prefHeight="800" prefWidth="1200"
+            style="-fx-background-color: #f8f6f0;">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="0" styleClass="navbar"
+              style="-fx-background-color: #0d4a2e; -fx-padding: 0 24; -fx-min-height: 52;">
+            <Label text="RAPID RUN" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <HBox spacing="8" alignment="CENTER">
+                <Button fx:id="navHome" text="Home" onAction="#showHome" styleClass="nav-btn"/>
+                <Button fx:id="navHorses" text="View Horses" onAction="#showHorses" styleClass="nav-btn"/>
+                <Button fx:id="navRace" text="Simulate Race" onAction="#showRace" styleClass="nav-btn"/>
+                <Button fx:id="navAbout" text="About" onAction="#showAbout" styleClass="nav-btn"/>
+            </HBox>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button fx:id="exitButton" text="Exit" onAction="#handleExit" styleClass="exit-nav-btn"/>
+        </HBox>
+    </top>
+    <center>
+        <StackPane fx:id="contentStack" style="-fx-background-color: #f8f6f0;"/>
+    </center>
+</BorderPane>

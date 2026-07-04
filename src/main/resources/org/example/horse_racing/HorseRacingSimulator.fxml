@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<TabPane fx:id="tabPane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+         fx:controller="org.example.horse_racing.controller.HorseController"
+         prefHeight="800" prefWidth="1100" tabClosingPolicy="UNAVAILABLE">
+    <Tab text="Simulator">
+        <BorderPane>
+            <!-- HEADER -->
+            <top>
+                <HBox alignment="CENTER_LEFT" spacing="16" style="-fx-background-color: linear-gradient(to bottom, #0d4a2e 0%, #165834 100%); -fx-padding: 16 24; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 8, 0, 0, 2);">
+                    <Label text="RAPID RUN" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Label text="Horse Racing Simulator" style="-fx-font-size: 13px; -fx-text-fill: rgba(255,255,255,0.9);"/>
+                    <Button fx:id="exitButton" text="Exit" onAction="#handleExit" style="-fx-background-color: rgba(255,255,255,0.2); -fx-text-fill: white; -fx-padding: 8 20; -fx-background-radius: 4;"/>
+                </HBox>
+            </top>
+
+            <!-- MAIN CONTENT -->
+            <center>
+                <SplitPane dividerPositions="0.72" style="-fx-background-color: #f5f5f0;">
+                    <!-- LEFT: Roster + Race Output -->
+                    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" style="-fx-background: #f5f5f0; -fx-padding: 20;">
+                        <VBox spacing="20" style="-fx-padding: 0 4;">
+                            <!-- Stats Row -->
+                            <HBox spacing="12">
+                                <VBox style="-fx-background-color: white; -fx-background-radius: 8; -fx-padding: 16; -fx-pref-width: 120; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 6, 0, 0, 1);" alignment="CENTER">
+                                    <Label fx:id="statTotal" text="0" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #0d4a2e;"/>
+                                    <Label text="Total Horses" style="-fx-font-size: 11px; -fx-text-fill: #718096;"/>
+                                </VBox>
+                                <VBox style="-fx-background-color: white; -fx-background-radius: 8; -fx-padding: 16; -fx-pref-width: 120; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 6, 0, 0, 1);" alignment="CENTER">
+                                    <Label fx:id="statGroupA" text="0" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #0d4a2e;"/>
+                                    <Label text="Group A" style="-fx-font-size: 11px; -fx-text-fill: #718096;"/>
+                                </VBox>
+                                <VBox style="-fx-background-color: white; -fx-background-radius: 8; -fx-padding: 16; -fx-pref-width: 120; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 6, 0, 0, 1);" alignment="CENTER">
+                                    <Label fx:id="statGroupB" text="0" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #0d4a2e;"/>
+                                    <Label text="Group B" style="-fx-font-size: 11px; -fx-text-fill: #718096;"/>
+                                </VBox>
+                                <VBox style="-fx-background-color: white; -fx-background-radius: 8; -fx-padding: 16; -fx-pref-width: 120; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 6, 0, 0, 1);" alignment="CENTER">
+                                    <Label fx:id="statGroupC" text="0" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #0d4a2e;"/>
+                                    <Label text="Group C" style="-fx-font-size: 11px; -fx-text-fill: #718096;"/>
+                                </VBox>
+                                <VBox style="-fx-background-color: white; -fx-background-radius: 8; -fx-padding: 16; -fx-pref-width: 120; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 6, 0, 0, 1);" alignment="CENTER">
+                                    <Label fx:id="statGroupD" text="0" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #0d4a2e;"/>
+                                    <Label text="Group D" style="-fx-font-size: 11px; -fx-text-fill: #718096;"/>
+                                </VBox>
+                            </HBox>
+
+                            <!-- Roster Table -->
+                            <VBox style="-fx-background-color: white; -fx-background-radius: 8; -fx-padding: 16; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 8, 0, 0, 1);" spacing="12">
+                                <Label text="Horse Roster" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #1a3d2e;"/>
+                                <TableView fx:id="horseTableView" prefHeight="220"/>
+                            </VBox>
+
+                            <!-- Race Output -->
+                            <VBox style="-fx-background-color: white; -fx-background-radius: 8; -fx-padding: 16; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 8, 0, 0, 1);" spacing="12">
+                                <Label text="Race Output" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #1a3d2e;"/>
+                                <TextArea fx:id="outputTextArea" editable="false" prefHeight="140" wrapText="true"/>
+                            </VBox>
+
+                            <!-- Race Actions -->
+                            <VBox spacing="12">
+                                <Label text="Race Actions" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #1a3d2e;"/>
+                                <HBox fx:id="buttonsHBox" spacing="10">
+                                    <Button fx:id="saveButton" text="Save to File" style="-fx-background-color: #e8e8e0; -fx-text-fill: #2d3748; -fx-padding: 10 18; -fx-background-radius: 6;"/>
+                                    <Button fx:id="selectButton" text="Select Horses" style="-fx-background-color: #0d4a2e; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 18; -fx-background-radius: 6;"/>
+                                    <Button fx:id="simulateButton" text="Simulate Race" style="-fx-background-color: #c9a227; -fx-text-fill: #1a1a1a; -fx-font-weight: bold; -fx-padding: 10 18; -fx-background-radius: 6;"/>
+                                    <Button fx:id="visualizeButton" text="View Chart" style="-fx-background-color: #0d4a2e; -fx-text-fill: white; -fx-padding: 10 18; -fx-background-radius: 6;"/>
+                                    <Button fx:id="viewButton" text="View Details" style="-fx-background-color: #e8e8e0; -fx-text-fill: #2d3748; -fx-padding: 10 18; -fx-background-radius: 6;"/>
+                                </HBox>
+                            </VBox>
+                        </VBox>
+                    </ScrollPane>
+
+                    <!-- RIGHT: Horse Form -->
+                    <VBox fx:id="addUpdateVBox" spacing="16" style="-fx-background-color: #fafaf8; -fx-padding: 24; -fx-min-width: 320;">
+                        <Label text="Manage Horse" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #1a3d2e;"/>
+                        <GridPane hgap="12" vgap="14">
+                            <Label text="ID" GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-font-weight: bold; -fx-text-fill: #4a5568;"/>
+                            <TextField fx:id="idField" prefWidth="220" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                            <Label text="Name" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-font-weight: bold; -fx-text-fill: #4a5568;"/>
+                            <TextField fx:id="nameField" prefWidth="220" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                            <Label text="Jockey" GridPane.columnIndex="0" GridPane.rowIndex="2" style="-fx-font-weight: bold; -fx-text-fill: #4a5568;"/>
+                            <TextField fx:id="jockeyField" prefWidth="220" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                            <Label text="Age" GridPane.columnIndex="0" GridPane.rowIndex="3" style="-fx-font-weight: bold; -fx-text-fill: #4a5568;"/>
+                            <TextField fx:id="ageField" prefWidth="80" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                            <Label text="Breed" GridPane.columnIndex="0" GridPane.rowIndex="4" style="-fx-font-weight: bold; -fx-text-fill: #4a5568;"/>
+                            <TextField fx:id="breedField" prefWidth="220" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                            <Label text="Race Record" GridPane.columnIndex="0" GridPane.rowIndex="5" style="-fx-font-weight: bold; -fx-text-fill: #4a5568;"/>
+                            <TextField fx:id="raceRecordField" prefWidth="220" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+                            <Label text="Group" GridPane.columnIndex="0" GridPane.rowIndex="6" style="-fx-font-weight: bold; -fx-text-fill: #4a5568;"/>
+                            <HBox spacing="12" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                <RadioButton fx:id="groupARadioButton" text="A"/>
+                                <RadioButton fx:id="groupBRadioButton" text="B"/>
+                                <RadioButton fx:id="groupCRadioButton" text="C"/>
+                                <RadioButton fx:id="groupDRadioButton" text="D"/>
+                            </HBox>
+                            <Label text="Photo" GridPane.columnIndex="0" GridPane.rowIndex="7" style="-fx-font-weight: bold; -fx-text-fill: #4a5568;"/>
+                            <HBox spacing="12" alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                <ImageView fx:id="imageView" fitHeight="72" fitWidth="72" preserveRatio="true" style="-fx-background-color: #e8e8e0; -fx-background-radius: 4;"/>
+                                <Button fx:id="browseButton" text="Browse" onAction="#browseImage" style="-fx-background-color: #e8e8e0; -fx-text-fill: #2d3748; -fx-padding: 8 16; -fx-background-radius: 6;"/>
+                            </HBox>
+                        </GridPane>
+                        <Region VBox.vgrow="ALWAYS"/>
+                        <VBox spacing="10">
+                            <Button fx:id="addButton" text="Add Horse" style="-fx-background-color: #0d4a2e; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 12 24; -fx-background-radius: 6;"/>
+                            <Button fx:id="updateButton" text="Update Horse" style="-fx-background-color: #e8e8e0; -fx-text-fill: #2d3748; -fx-padding: 10 24; -fx-background-radius: 6;"/>
+                            <Button fx:id="deleteButton" text="Delete Horse" style="-fx-background-color: #c53030; -fx-text-fill: white; -fx-padding: 10 24; -fx-background-radius: 6;"/>
+                        </VBox>
+                    </VBox>
+                </SplitPane>
+            </center>
+        </BorderPane>
+    </Tab>
+</TabPane>
