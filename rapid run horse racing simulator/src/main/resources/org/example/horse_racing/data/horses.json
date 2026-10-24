@@ -1,0 +1,181 @@
+[ {
+  "id" : "002",
+  "breed" : "Arabian",
+  "imagePath" : "",
+  "raceRecord" : "8 wins, 5 losses",
+  "jockey" : "Maria Garcia",
+  "group" : "A",
+  "age" : 7,
+  "name" : "Silver Shadow"
+}, {
+  "id" : "003",
+  "breed" : "Quarter Horse",
+  "imagePath" : "",
+  "raceRecord" : "15 wins, 2 losses",
+  "jockey" : "Robert Chen",
+  "group" : "A",
+  "age" : 4,
+  "name" : "Golden Wind"
+}, {
+  "id" : "004",
+  "breed" : "Thoroughbred",
+  "imagePath" : "",
+  "raceRecord" : "9 wins, 4 losses",
+  "jockey" : "Emma Davis",
+  "group" : "A",
+  "age" : 6,
+  "name" : "Midnight Runner"
+}, {
+  "id" : "005",
+  "breed" : "Arabian",
+  "imagePath" : "",
+  "raceRecord" : "11 wins, 6 losses",
+  "jockey" : "David Lee",
+  "group" : "A",
+  "age" : 5,
+  "name" : "Storm Chaser"
+}, {
+  "id" : "006",
+  "breed" : "Standardbred",
+  "imagePath" : "",
+  "raceRecord" : "7 wins, 3 losses",
+  "jockey" : "Sarah Kim",
+  "group" : "B",
+  "age" : 4,
+  "name" : "Lightning Bolt"
+}, {
+  "id" : "007",
+  "breed" : "Arabian",
+  "imagePath" : "",
+  "raceRecord" : "6 wins, 8 losses",
+  "jockey" : "Michael Brown",
+  "group" : "B",
+  "age" : 8,
+  "name" : "Desert Rose"
+}, {
+  "id" : "008",
+  "breed" : "Thoroughbred",
+  "imagePath" : "",
+  "raceRecord" : "10 wins, 5 losses",
+  "jockey" : "Jessica Taylor",
+  "group" : "B",
+  "age" : 5,
+  "name" : "Ocean Wave"
+}, {
+  "id" : "009",
+  "breed" : "Quarter Horse",
+  "imagePath" : "",
+  "raceRecord" : "14 wins, 1 loss",
+  "jockey" : "Chris Anderson",
+  "group" : "B",
+  "age" : 6,
+  "name" : "Fire Spirit"
+}, {
+  "id" : "010",
+  "breed" : "Arabian",
+  "imagePath" : "",
+  "raceRecord" : "9 wins, 4 losses",
+  "jockey" : "Amanda White",
+  "group" : "B",
+  "age" : 4,
+  "name" : "Star Dancer"
+}, {
+  "id" : "011",
+  "breed" : "Thoroughbred",
+  "imagePath" : "",
+  "raceRecord" : "5 wins, 7 losses",
+  "jockey" : "Daniel Martinez",
+  "group" : "C",
+  "age" : 7,
+  "name" : "Mountain King"
+}, {
+  "id" : "012",
+  "breed" : "Standardbred",
+  "imagePath" : "",
+  "raceRecord" : "8 wins, 6 losses",
+  "jockey" : "Laura Johnson",
+  "group" : "C",
+  "age" : 5,
+  "name" : "River Spirit"
+}, {
+  "id" : "013",
+  "breed" : "Quarter Horse",
+  "imagePath" : "",
+  "raceRecord" : "11 wins, 3 losses",
+  "jockey" : "Thomas Clark",
+  "group" : "C",
+  "age" : 6,
+  "name" : "Sunset Rider"
+}, {
+  "id" : "014",
+  "breed" : "Thoroughbred",
+  "imagePath" : "",
+  "raceRecord" : "6 wins, 9 losses",
+  "jockey" : "Rachel Green",
+  "group" : "C",
+  "age" : 4,
+  "name" : "Northern Star"
+}, {
+  "id" : "015",
+  "breed" : "Arabian",
+  "imagePath" : "",
+  "raceRecord" : "13 wins, 2 losses",
+  "jockey" : "Kevin Wright",
+  "group" : "C",
+  "age" : 5,
+  "name" : "Eagle Eye"
+}, {
+  "id" : "016",
+  "breed" : "Thoroughbred",
+  "imagePath" : "",
+  "raceRecord" : "4 wins, 10 losses",
+  "jockey" : "Nicole Adams",
+  "group" : "D",
+  "age" : 6,
+  "name" : "Phoenix Rise"
+}, {
+  "id" : "017",
+  "breed" : "Quarter Horse",
+  "imagePath" : "",
+  "raceRecord" : "16 wins, 0 losses",
+  "jockey" : "Andrew Hall",
+  "group" : "D",
+  "age" : 4,
+  "name" : "Swift Arrow"
+}, {
+  "id" : "018",
+  "breed" : "Arabian",
+  "imagePath" : "",
+  "raceRecord" : "7 wins, 8 losses",
+  "jockey" : "Sophie Hill",
+  "group" : "D",
+  "age" : 7,
+  "name" : "Diamond Dust"
+}, {
+  "id" : "019",
+  "breed" : "Standardbred",
+  "imagePath" : "",
+  "raceRecord" : "9 wins, 5 losses",
+  "jockey" : "Mark Scott",
+  "group" : "D",
+  "age" : 5,
+  "name" : "Iron Will"
+}, {
+  "id" : "020",
+  "breed" : "Thoroughbred",
+  "imagePath" : "",
+  "raceRecord" : "12 wins, 4 losses",
+  "jockey" : "Kate Lewis",
+  "group" : "D",
+  "age" : 6,
+  "name" : "Blue Horizon"
+}, {
+  "id" : "001",
+  "breed" : "Thoroughbred",
+  "imagePath" : "",
+  "raceRecord" : "12 wins, 3 losses",
+  "jockey" : "James Wilson",
+  "group" : "A",
+  "age" : 8,
+  "name" : "Thunder Strike"
+} ]

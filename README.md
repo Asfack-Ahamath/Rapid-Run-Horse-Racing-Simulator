@@ -1,11 +1,11 @@
 # Rapid Run — Horse Racing Simulator
 
 [![Java](https://img.shields.io/badge/Java-21-orange?logo=openjdk&logoColor=white)](https://openjdk.org/)
-[![JavaFX](https://img.shields.io/badge/JavaFX-21-007396?logo=java&logoColor=white)](https://openjfx.io/)
+[![JavaFX](https://img.shields.io/badge/JavaFX-23-007396?logo=java&logoColor=white)](https://openjfx.io/)
 [![Maven](https://img.shields.io/badge/Maven-3.6+-blue?logo=apachemaven&logoColor=white)](https://maven.apache.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-A desktop **JavaFX** application for managing horses, simulating races, and visualizing results. Built with a layered architecture, JSON persistence, and a polished card-based UI.
+A desktop **JavaFX** application for managing horses, simulating races, and visualizing results. The entire UI is built in plain Java (no FXML), is fully responsive, and ships with **light and dark** themes and an expandable / collapsible sidebar.
 
 ---
 
@@ -32,11 +32,11 @@ A desktop **JavaFX** application for managing horses, simulating races, and visu
 **Rapid Run** is a horse racing simulator that lets you:
 
 - Register and manage horses across four racing groups (A, B, C, D)
-- Select one horse per group and run animated race simulations
-- View podium results and export race data
-- Track statistics on a live dashboard with bar-chart analytics
+- Draw a field of one runner per group, with odds based on each horse's form and age
+- Watch an animated race on a canvas-drawn track with live standings and lead changes
+- Review the podium, finishing times and gaps, and track a persistent race history
 
-The codebase follows clean separation between UI controllers, business services, domain models, and repositories — suitable as a portfolio project or JavaFX learning reference.
+The codebase keeps a clean separation between views, services, domain models, and repositories.
 
 ---
 
@@ -44,26 +44,28 @@ The codebase follows clean separation between UI controllers, business services,
 
 | Area | Capabilities |
 |------|--------------|
-| **Horse management** | Add, update, and delete horses with validation (ID, name, jockey, age, breed, record, group) |
-| **Grouping** | Four groups (A–D); one horse per group is required to start a race |
-| **Race simulation** | Random selection per group, timed finish order, animated track view |
-| **Results** | Top 3 winners, full standings, restart and re-simulate |
-| **Dashboard** | Total horses, per-group counts, race-ready status |
-| **Visualization** | Bar chart of winning horses |
-| **Export** | Save horse/race details to a text file |
-| **Persistence** | Horse data stored in JSON and loaded on startup |
+| **Horse management** | Add, edit, delete with inline validation · photo upload · card **or** table view · search, group filter, sorting |
+| **Race simulation** | Times driven by form (win rate) + age curve + race-day variance · pre-race decimal odds · photo-finish tie breaking |
+| **Race animation** | Canvas track with turf stripes, distance markers, checkered finish, galloping runners, surges and fades · 1× / 2× / 4× speed |
+| **Results** | Live standings, final order with gaps, podium, finishing-time bars · race again or redraw |
+| **Dashboard** | Stable size, race readiness, roster balance, highest-rated horse, recent races |
+| **Statistics** | Leaderboard, wins by group, full race log (persisted) |
+| **Themes** | Light / Dark switch (first launch follows the OS when supported), remembered between launches |
+| **Sidebar** | Expand / collapse button (`Ctrl+B`), auto-collapses on narrow windows and restores your choice when there is room |
+| **Any screen** | Window sizes itself to the screen (maximised on small / high-scaling laptops), content centres on ultrawides, spacing tightens on short screens, the race track always fits the window height |
+| **Responsive** | Sidebar collapses to an icon rail, card grids reflow, headers/toolbars wrap, side panels stack under the track, table hides low-priority columns |
+| **Export** | Text report of the roster plus the latest race result |
+| **Keyboard** | `Ctrl+1–4` pages · `Ctrl+N` add horse · `Ctrl+F` search · `Ctrl+R` start/stop race · `Ctrl+B` sidebar · `Ctrl+Shift+T` light/dark · `Esc` close dialog |
 
 ---
 
 ## Screenshots
 
-> Add screenshots to a `docs/screenshots/` folder after your first run, then embed them here.
-
-<!--
-![Welcome screen](docs/screenshots/welcome.png)
-![Race simulation](docs/screenshots/race.png)
-![Dashboard](docs/screenshots/dashboard.png)
--->
+| Light | Dark |
+|---|---|
+| ![Dashboard light](docs/screenshots/dashboard-1360-light.png) | ![Dashboard dark](docs/screenshots/dashboard-1360-dark.png) |
+| ![Race in progress](docs/screenshots/race-mid-light.png) | ![Race results](docs/screenshots/race-done-dark.png) |
+| ![Horses](docs/screenshots/horses-1360-light.png) | ![Horses, narrow window](docs/screenshots/horses-760-dark.png) |
 
 ---
 
@@ -117,13 +119,13 @@ mvn javafx:run
 ./mvnw clean javafx:run
 ```
 
-The app opens on the **Welcome** screen. Use the navigation to manage horses, view the dashboard, and simulate races.
+The app opens on the **Dashboard**. Use the sidebar (or `Ctrl+1–4`) to manage horses, run races and view statistics. Switch Light / Dark and expand / collapse the sidebar at the bottom of the sidebar.
 
 ---
 
 ## Running Tests
 
-Unit tests cover core horse service logic (add, update, delete, validation):
+Unit tests cover horse management, race-record parsing, race ranking, the form/odds model and JSON read/write:
 
 ```bash
 mvn test
@@ -134,69 +136,57 @@ mvn test
 ## Project Structure
 
 ```
-Rapid_Run/
-├── src/
-│   ├── main/
-│   │   ├── java/org/example/horse_racing/
-│   │   │   ├── config/          # ServiceRegistry (dependency injection)
-│   │   │   ├── controller/      # JavaFX FXML controllers
-│   │   │   ├── domain/          # Horse record, HorseGroup enum
-│   │   │   ├── repository/      # HorseRepository + JSON-backed impl
-│   │   │   ├── service/         # HorseService, RaceService, persistence, export
-│   │   │   ├── data/            # horses.json (runtime persistence)
-│   │   │   └── HorseApplication.java
-│   │   └── resources/org/example/horse_racing/
-│   │       ├── *.fxml           # UI layouts
-│   │       └── styles/          # theme.css, dashboard.css, chart.css
-│   └── test/java/               # JUnit 5 tests
-├── pom.xml
-├── mvnw / mvnw.cmd              # Maven Wrapper
-└── README.md
+src/main/java/org/example/horse_racing/
+├── HorseApplication.java        # entry point, builds the window
+├── config/                      # ServiceRegistry (simple DI)
+├── domain/                      # Horse, HorseGroup, RaceRecord, RaceEntry, RaceResult
+├── repository/                  # HorseRepository + in-memory and JSON-backed impls
+├── service/                     # HorseService, RaceService, RaceHistoryService, export, persistence, AppPaths
+└── ui/
+    ├── AppShell.java            # sidebar + content + overlay layers, navigation, shortcuts
+    ├── theme/                   # ThemeManager (light/dark/system), Palette for canvas drawing
+    ├── components/              # Icons, ResponsiveGrid, AdaptiveSplit, ViewHeader, Overlay dialogs, Toasts
+    └── views/                   # Dashboard, Horses (+ form dialog), Race (+ RaceTrack canvas), Statistics, About
+src/main/resources/org/example/horse_racing/
+├── styles/app.css               # all styling; colour tokens swapped by .theme-dark
+├── data/horses.json             # sample roster used to seed first launch
+└── assets/horse-icon.png
 ```
 
 ---
 
 ## Architecture
 
-The application uses a **layered architecture** with thin controllers and testable services:
-
 ```
-┌─────────────────────────────────────────┐
-│  Controllers (FXML / JavaFX UI)         │
-└─────────────────┬───────────────────────┘
-                  │
-┌─────────────────▼───────────────────────┐
-│  Services (HorseService, RaceService)   │
-└─────────────────┬───────────────────────┘
-                  │
-┌─────────────────▼───────────────────────┐
-│  Repository (JsonBackedHorseRepository) │
-└─────────────────┬───────────────────────┘
-                  │
-┌─────────────────▼───────────────────────┐
-│  Domain (Horse, HorseGroup)             │
-└─────────────────────────────────────────┘
+┌──────────────────────────────────────────────┐
+│  UI (pure Java views, CSS theme tokens)      │
+└───────────────────┬──────────────────────────┘
+┌───────────────────▼──────────────────────────┐
+│  Services (Horse, Race, RaceHistory, Export) │
+└───────────────────┬──────────────────────────┘
+┌───────────────────▼──────────────────────────┐
+│  Repository (JsonBackedHorseRepository)      │
+└───────────────────┬──────────────────────────┘
+┌───────────────────▼──────────────────────────┐
+│  Domain (Horse, RaceResult, ...)             │
+└──────────────────────────────────────────────┘
 ```
 
-| Package | Responsibility |
-|---------|----------------|
-| `domain` | Immutable `Horse` record, `HorseGroup` enum |
-| `repository` | `HorseRepository` interface, in-memory and JSON-backed implementations |
-| `service` | Business logic, race simulation, JSON I/O, file export |
-| `controller` | UI event handling; delegates to `ServiceRegistry` |
-| `config` | Central `ServiceRegistry` for simple dependency injection |
+**Why no FXML?** Building views in code keeps layout, behaviour and responsiveness in one place, removes
+reflection/`opens` requirements, and makes custom responsive containers (`ResponsiveGrid`, `AdaptiveSplit`,
+`ViewHeader`) first-class. Dialogs are in-window overlays, so they always match the current theme.
 
 ---
 
 ## Data Persistence
 
-Horse records are saved to:
+Data lives in a **`data/` folder inside the folder the app is started from** — the project root when you use `mvn javafx:run`:
 
-`src/main/java/org/example/horse_racing/data/horses.json`
+- `data/horses.json` — your roster (written atomically on every change)
+- `data/races.json` — race history (latest 100 races)
 
-Changes made in the app (add/update/delete) are written to this file automatically. Sample horses are included for demo use.
-
-Exported race reports are written to `horse_details.txt` in the project root when you use the export feature.
+On first launch the roster is seeded from the bundled sample (or copied from `~/.rapid-run/` if you used v2.0).
+Override the folder with `-Drapidrun.dataDir=/path/to/folder`. The About dialog shows the active location.
 
 ---
 
@@ -205,8 +195,8 @@ Exported race reports are written to `horse_details.txt` in the project root whe
 | Technology | Purpose |
 |------------|---------|
 | Java 21 | Language & runtime |
-| JavaFX 21 | Desktop UI (FXML, CSS, animations) |
-| Jackson 2.16 | JSON serialization |
+| JavaFX 23 | Desktop UI (controls, CSS, Canvas, animation) |
+| Built-in `Json` helper | JSON read/write (no external libraries) |
 | JUnit 5 | Unit testing |
 | Maven | Build & dependency management |
 
@@ -214,10 +204,10 @@ Exported race reports are written to `horse_details.txt` in the project root whe
 
 ## UI Design
 
-- **Theme:** Navy primary (`#1a365d`), orange accent (`#dd6b20`)
-- **Layout:** Card-based panels, consistent spacing, responsive race track scaling
-- **Typography:** Segoe UI with clear visual hierarchy
-- **Animations:** Translate transitions and live timer during race simulation
+- **Palette:** racing green primary, brass accent, one colour per group/lane (gold, blue, red, teal), tuned separately for light and dark
+- **Theming:** every colour is a CSS looked-up token on `.root`; `.root.theme-dark` swaps them, and Modena tokens are mapped too so stock controls follow
+- **Layout:** card-based, 4/2/1-column stat grid, auto-fill card grids, sidebar → icon rail under 980px (or any time with the collapse button)
+- **Motion:** fades on page change, scale-in dialogs, sliding toasts, 60 fps canvas race
 
 ---
 

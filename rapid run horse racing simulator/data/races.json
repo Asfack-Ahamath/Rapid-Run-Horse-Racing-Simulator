@@ -1,0 +1,554 @@
+[
+  {
+    "runAt": "2026-10-24T22:28:00.198482900",
+    "distance": 1200,
+    "entries": [
+      {
+        "id": "019",
+        "name": "Iron Will",
+        "jockey": "Mark Scott",
+        "group": "D",
+        "lane": 3,
+        "time": 67.28,
+        "rank": 1,
+        "odds": 4.0
+      },
+      {
+        "id": "013",
+        "name": "Sunset Rider",
+        "jockey": "Thomas Clark",
+        "group": "C",
+        "lane": 2,
+        "time": 67.95,
+        "rank": 2,
+        "odds": 2.7
+      },
+      {
+        "id": "002",
+        "name": "Silver Shadow",
+        "jockey": "Maria Garcia",
+        "group": "A",
+        "lane": 0,
+        "time": 68.56,
+        "rank": 3,
+        "odds": 5.1
+      },
+      {
+        "id": "008",
+        "name": "Ocean Wave",
+        "jockey": "Jessica Taylor",
+        "group": "B",
+        "lane": 1,
+        "time": 68.72,
+        "rank": 4,
+        "odds": 3.7
+      }
+    ]
+  },
+  {
+    "runAt": "2026-10-24T22:25:50.638900",
+    "distance": 1200,
+    "entries": [
+      {
+        "id": "004",
+        "name": "Midnight Runner",
+        "jockey": "Emma Davis",
+        "group": "A",
+        "lane": 0,
+        "time": 65.47,
+        "rank": 1,
+        "odds": 2.85
+      },
+      {
+        "id": "012",
+        "name": "River Spirit",
+        "jockey": "Laura Johnson",
+        "group": "C",
+        "lane": 2,
+        "time": 67.85,
+        "rank": 2,
+        "odds": 4.0
+      },
+      {
+        "id": "008",
+        "name": "Ocean Wave",
+        "jockey": "Jessica Taylor",
+        "group": "B",
+        "lane": 1,
+        "time": 68.59,
+        "rank": 3,
+        "odds": 3.05
+      },
+      {
+        "id": "018",
+        "name": "Diamond Dust",
+        "jockey": "Sophie Hill",
+        "group": "D",
+        "lane": 3,
+        "time": 69.02,
+        "rank": 4,
+        "odds": 6.3
+      }
+    ]
+  },
+  {
+    "runAt": "2026-10-24T22:13:31.001600",
+    "distance": 1200,
+    "entries": [
+      {
+        "id": "020",
+        "name": "Blue Horizon",
+        "jockey": "Kate Lewis",
+        "group": "D",
+        "lane": 3,
+        "time": 67.29,
+        "rank": 1,
+        "odds": 2.25
+      },
+      {
+        "id": "012",
+        "name": "River Spirit",
+        "jockey": "Laura Johnson",
+        "group": "C",
+        "lane": 2,
+        "time": 68.27,
+        "rank": 2,
+        "odds": 3.75
+      },
+      {
+        "id": "007",
+        "name": "Desert Rose",
+        "jockey": "Michael Brown",
+        "group": "B",
+        "lane": 1,
+        "time": 68.37,
+        "rank": 3,
+        "odds": 7.8
+      },
+      {
+        "id": "002",
+        "name": "Silver Shadow",
+        "jockey": "Maria Garcia",
+        "group": "A",
+        "lane": 0,
+        "time": 69.02,
+        "rank": 4,
+        "odds": 3.95
+      }
+    ]
+  },
+  {
+    "runAt": "2026-10-24T22:08:15.912286",
+    "distance": 1200,
+    "entries": [
+      {
+        "id": "013",
+        "name": "Sunset Rider",
+        "jockey": "Thomas Clark",
+        "group": "C",
+        "lane": 2,
+        "time": 66.71,
+        "rank": 1,
+        "odds": 2.1
+      },
+      {
+        "id": "018",
+        "name": "Diamond Dust",
+        "jockey": "Sophie Hill",
+        "group": "D",
+        "lane": 3,
+        "time": 69.1,
+        "rank": 2,
+        "odds": 6.05
+      },
+      {
+        "id": "005",
+        "name": "Storm Chaser",
+        "jockey": "David Lee",
+        "group": "A",
+        "lane": 0,
+        "time": 69.71,
+        "rank": 3,
+        "odds": 3.1
+      },
+      {
+        "id": "007",
+        "name": "Desert Rose",
+        "jockey": "Michael Brown",
+        "group": "B",
+        "lane": 1,
+        "time": 69.88,
+        "rank": 4,
+        "odds": 7.95
+      }
+    ]
+  },
+  {
+    "runAt": "2026-10-24T21:59:32.073247800",
+    "distance": 1200,
+    "entries": [
+      {
+        "id": "020",
+        "name": "Blue Horizon",
+        "jockey": "Kate Lewis",
+        "group": "D",
+        "lane": 3,
+        "time": 66.62,
+        "rank": 1,
+        "odds": 3.5
+      },
+      {
+        "id": "001",
+        "name": "Thunder Strike",
+        "jockey": "James Wilson",
+        "group": "A",
+        "lane": 0,
+        "time": 67.21,
+        "rank": 2,
+        "odds": 4.3
+      },
+      {
+        "id": "009",
+        "name": "Fire Spirit",
+        "jockey": "Chris Anderson",
+        "group": "B",
+        "lane": 1,
+        "time": 68.59,
+        "rank": 3,
+        "odds": 2.1
+      },
+      {
+        "id": "011",
+        "name": "Mountain King",
+        "jockey": "Daniel Martinez",
+        "group": "C",
+        "lane": 2,
+        "time": 70.45,
+        "rank": 4,
+        "odds": 10.45
+      }
+    ]
+  },
+  {
+    "runAt": "2026-10-24T21:56:25.657122900",
+    "distance": 1200,
+    "entries": [
+      {
+        "id": "020",
+        "name": "Blue Horizon",
+        "jockey": "Kate Lewis",
+        "group": "D",
+        "lane": 3,
+        "time": 67.52,
+        "rank": 1,
+        "odds": 3.5
+      },
+      {
+        "id": "009",
+        "name": "Fire Spirit",
+        "jockey": "Chris Anderson",
+        "group": "B",
+        "lane": 1,
+        "time": 68.16,
+        "rank": 2,
+        "odds": 2.1
+      },
+      {
+        "id": "001",
+        "name": "Thunder Strike",
+        "jockey": "James Wilson",
+        "group": "A",
+        "lane": 0,
+        "time": 68.25,
+        "rank": 3,
+        "odds": 4.3
+      },
+      {
+        "id": "011",
+        "name": "Mountain King",
+        "jockey": "Daniel Martinez",
+        "group": "C",
+        "lane": 2,
+        "time": 69.93,
+        "rank": 4,
+        "odds": 10.45
+      }
+    ]
+  },
+  {
+    "runAt": "2026-10-24T21:56:20.508842600",
+    "distance": 1200,
+    "entries": [
+      {
+        "id": "009",
+        "name": "Fire Spirit",
+        "jockey": "Chris Anderson",
+        "group": "B",
+        "lane": 1,
+        "time": 67.5,
+        "rank": 1,
+        "odds": 2.1
+      },
+      {
+        "id": "001",
+        "name": "Thunder Strike",
+        "jockey": "James Wilson",
+        "group": "A",
+        "lane": 0,
+        "time": 67.62,
+        "rank": 2,
+        "odds": 4.3
+      },
+      {
+        "id": "011",
+        "name": "Mountain King",
+        "jockey": "Daniel Martinez",
+        "group": "C",
+        "lane": 2,
+        "time": 70.21,
+        "rank": 3,
+        "odds": 10.45
+      },
+      {
+        "id": "020",
+        "name": "Blue Horizon",
+        "jockey": "Kate Lewis",
+        "group": "D",
+        "lane": 3,
+        "time": 70.23,
+        "rank": 4,
+        "odds": 3.5
+      }
+    ]
+  },
+  {
+    "runAt": "2026-10-24T21:54:23.324299700",
+    "distance": 1200,
+    "entries": [
+      {
+        "id": "020",
+        "name": "Blue Horizon",
+        "jockey": "Kate Lewis",
+        "group": "D",
+        "lane": 3,
+        "time": 66.24,
+        "rank": 1,
+        "odds": 3.5
+      },
+      {
+        "id": "001",
+        "name": "Thunder Strike",
+        "jockey": "James Wilson",
+        "group": "A",
+        "lane": 0,
+        "time": 67.92,
+        "rank": 2,
+        "odds": 4.3
+      },
+      {
+        "id": "009",
+        "name": "Fire Spirit",
+        "jockey": "Chris Anderson",
+        "group": "B",
+        "lane": 1,
+        "time": 68.34,
+        "rank": 3,
+        "odds": 2.1
+      },
+      {
+        "id": "011",
+        "name": "Mountain King",
+        "jockey": "Daniel Martinez",
+        "group": "C",
+        "lane": 2,
+        "time": 69.34,
+        "rank": 4,
+        "odds": 10.45
+      }
+    ]
+  },
+  {
+    "runAt": "2026-10-24T21:53:32.129566100",
+    "distance": 1200,
+    "entries": [
+      {
+        "id": "009",
+        "name": "Fire Spirit",
+        "jockey": "Chris Anderson",
+        "group": "B",
+        "lane": 1,
+        "time": 66.45,
+        "rank": 1,
+        "odds": 2.1
+      },
+      {
+        "id": "020",
+        "name": "Blue Horizon",
+        "jockey": "Kate Lewis",
+        "group": "D",
+        "lane": 3,
+        "time": 68.06,
+        "rank": 2,
+        "odds": 3.5
+      },
+      {
+        "id": "001",
+        "name": "Thunder Strike",
+        "jockey": "James Wilson",
+        "group": "A",
+        "lane": 0,
+        "time": 68.34,
+        "rank": 3,
+        "odds": 4.3
+      },
+      {
+        "id": "011",
+        "name": "Mountain King",
+        "jockey": "Daniel Martinez",
+        "group": "C",
+        "lane": 2,
+        "time": 69.69,
+        "rank": 4,
+        "odds": 10.45
+      }
+    ]
+  },
+  {
+    "runAt": "2026-10-24T19:56:44.319720100",
+    "distance": 1200,
+    "entries": [
+      {
+        "id": "001",
+        "name": "Thunder Strike",
+        "jockey": "James Wilson",
+        "group": "A",
+        "lane": 0,
+        "time": 66.35,
+        "rank": 1,
+        "odds": 3.3
+      },
+      {
+        "id": "020",
+        "name": "Blue Horizon",
+        "jockey": "Kate Lewis",
+        "group": "D",
+        "lane": 3,
+        "time": 68.45,
+        "rank": 2,
+        "odds": 2.7
+      },
+      {
+        "id": "008",
+        "name": "Ocean Wave",
+        "jockey": "Jessica Taylor",
+        "group": "B",
+        "lane": 1,
+        "time": 69.56,
+        "rank": 3,
+        "odds": 3.4
+      },
+      {
+        "id": "014",
+        "name": "Northern Star",
+        "jockey": "Rachel Green",
+        "group": "C",
+        "lane": 2,
+        "time": 69.57000000000001,
+        "rank": 4,
+        "odds": 8.45
+      }
+    ]
+  },
+  {
+    "runAt": "2026-10-24T19:14:44.858159300",
+    "distance": 1200,
+    "entries": [
+      {
+        "id": "020",
+        "name": "Blue Horizon",
+        "jockey": "Kate Lewis",
+        "group": "D",
+        "lane": 3,
+        "time": 66.75,
+        "rank": 1,
+        "odds": 2.7
+      },
+      {
+        "id": "001",
+        "name": "Thunder Strike",
+        "jockey": "James Wilson",
+        "group": "A",
+        "lane": 0,
+        "time": 68.03,
+        "rank": 2,
+        "odds": 3.3
+      },
+      {
+        "id": "008",
+        "name": "Ocean Wave",
+        "jockey": "Jessica Taylor",
+        "group": "B",
+        "lane": 1,
+        "time": 68.83,
+        "rank": 3,
+        "odds": 3.4
+      },
+      {
+        "id": "014",
+        "name": "Northern Star",
+        "jockey": "Rachel Green",
+        "group": "C",
+        "lane": 2,
+        "time": 70.3,
+        "rank": 4,
+        "odds": 8.45
+      }
+    ]
+  },
+  {
+    "runAt": "2026-10-24T11:40:49.203104500",
+    "distance": 1200,
+    "entries": [
+      {
+        "id": "005",
+        "name": "Storm Chaser",
+        "jockey": "David Lee",
+        "group": "A",
+        "lane": 0,
+        "time": 67.66,
+        "rank": 1,
+        "odds": 3.65
+      },
+      {
+        "id": "009",
+        "name": "Fire Spirit",
+        "jockey": "Chris Anderson",
+        "group": "B",
+        "lane": 1,
+        "time": 67.76,
+        "rank": 2,
+        "odds": 1.65
+      },
+      {
+        "id": "016",
+        "name": "Phoenix Rise",
+        "jockey": "Nicole Adams",
+        "group": "D",
+        "lane": 3,
+        "time": 67.97,
+        "rank": 3,
+        "odds": 10.05
+      },
+      {
+        "id": "014",
+        "name": "Northern Star",
+        "jockey": "Rachel Green",
+        "group": "C",
+        "lane": 2,
+        "time": 70.19,
+        "rank": 4,
+        "odds": 8.7
+      }
+    ]
+  }
+]

@@ -1,0 +1,654 @@
+/* ==========================================================================
+   Rapid Run — application theme
+   Colour tokens live on .root and are swapped by .root.theme-dark.
+   Everything else references tokens only, so both themes stay in sync.
+   ========================================================================== */
+
+.root {
+    /* ---- surfaces ---- */
+    -rr-bg: #F4F2EC;
+    -rr-surface: #FFFFFF;
+    -rr-surface-2: #F7F5F0;
+    -rr-surface-3: #ECE8DF;
+    -rr-border: #E4DFD4;
+    -rr-border-strong: #CFC8BA;
+
+    /* ---- text ---- */
+    -rr-text: #1B1D1A;
+    -rr-text-muted: #6B6A63;
+    -rr-text-subtle: #9A978D;
+
+    /* ---- brand ---- */
+    -rr-primary: #0E5A3A;
+    -rr-primary-hover: #0A472D;
+    -rr-on-primary: #FFFFFF;
+    -rr-primary-soft: #E1EFE7;
+    -rr-accent: #B8862B;
+
+    /* ---- status ---- */
+    -rr-danger: #C93A32;
+    -rr-danger-soft: #FBE6E4;
+    -rr-success: #1E8A4C;
+    -rr-success-soft: #DDF3E5;
+    -rr-warning: #B7791F;
+    -rr-warning-soft: #FBF0D9;
+
+    /* ---- sidebar (brand-coloured in both themes) ---- */
+    -rr-side-bg: #0F3D2A;
+    -rr-side-text: rgba(255, 255, 255, 0.70);
+    -rr-side-text-strong: #FFFFFF;
+    -rr-side-hover: rgba(255, 255, 255, 0.07);
+    -rr-side-active: rgba(255, 255, 255, 0.13);
+    -rr-side-border: rgba(255, 255, 255, 0.08);
+
+    /* ---- groups / lanes: base, soft background, ink (text on soft) ---- */
+    -rr-group-a: #D99A1E;  -rr-group-a-soft: #FBF0D9;  -rr-group-a-ink: #8A5A00;
+    -rr-group-b: #3B7BEA;  -rr-group-b-soft: #E2ECFD;  -rr-group-b-ink: #1D4FB0;
+    -rr-group-c: #E0525A;  -rr-group-c-soft: #FCE4E5;  -rr-group-c-ink: #A3242C;
+    -rr-group-d: #12A594;  -rr-group-d-soft: #DBF5F1;  -rr-group-d-ink: #0B6B60;
+
+    -rr-shadow: rgba(24, 28, 22, 0.07);
+    -rr-shadow-strong: rgba(24, 28, 22, 0.16);
+    -rr-scrim: rgba(12, 16, 14, 0.45);
+
+    /* ---- map tokens onto Modena so stock controls follow the theme ---- */
+    -fx-base: -rr-surface;
+    -fx-background: -rr-bg;
+    -fx-control-inner-background: -rr-surface;
+    -fx-control-inner-background-alt: -rr-surface-2;
+    -fx-accent: -rr-primary;
+    -fx-default-button: -rr-primary;
+    -fx-focus-color: -rr-primary;
+    -fx-faint-focus-color: transparent;
+    -fx-selection-bar: -rr-primary-soft;
+    -fx-selection-bar-non-focused: -rr-surface-3;
+    -fx-text-background-color: -rr-text;
+    -fx-mark-color: -rr-text-muted;
+
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 13px;
+    -fx-background-color: -rr-bg;
+}
+
+.root.theme-dark {
+    -rr-bg: #0D1210;
+    -rr-surface: #151C19;
+    -rr-surface-2: #1B2420;
+    -rr-surface-3: #222D28;
+    -rr-border: #26312C;
+    -rr-border-strong: #34413B;
+
+    -rr-text: #E8EEEA;
+    -rr-text-muted: #9BA8A1;
+    -rr-text-subtle: #6E7B74;
+
+    -rr-primary: #3DD68C;
+    -rr-primary-hover: #63E2A4;
+    -rr-on-primary: #04140B;
+    -rr-primary-soft: #133325;
+    -rr-accent: #E3B656;
+
+    -rr-danger: #F2685F;
+    -rr-danger-soft: #3A1A18;
+    -rr-success: #4ADE80;
+    -rr-success-soft: #12301F;
+    -rr-warning: #F5B942;
+    -rr-warning-soft: #3A2C10;
+
+    -rr-side-bg: #0A0F0D;
+    -rr-side-border: rgba(255, 255, 255, 0.06);
+
+    -rr-group-a: #F0B43C;  -rr-group-a-soft: #3A2E14;  -rr-group-a-ink: #F7CF7A;
+    -rr-group-b: #5B95F5;  -rr-group-b-soft: #182A47;  -rr-group-b-ink: #9CC0FA;
+    -rr-group-c: #F06B72;  -rr-group-c-soft: #43191C;  -rr-group-c-ink: #F7A4A8;
+    -rr-group-d: #2CC7B3;  -rr-group-d-soft: #0F3631;  -rr-group-d-ink: #7FE3D5;
+
+    -rr-shadow: rgba(0, 0, 0, 0.30);
+    -rr-shadow-strong: rgba(0, 0, 0, 0.55);
+    -rr-scrim: rgba(0, 0, 0, 0.62);
+
+    -fx-base: -rr-surface-2;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+.label { -fx-text-fill: -rr-text; }
+.icon { -fx-fill: -rr-text-muted; }
+.text-muted { -fx-text-fill: -rr-text-muted; }
+.text-subtle { -fx-text-fill: -rr-text-subtle; }
+.text-strong { -fx-font-weight: bold; }
+.text-small { -fx-font-size: 11.5px; }
+.text-mono { -fx-font-family: "Consolas", "Menlo", monospace; }
+
+.view-title { -fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: -rr-text; }
+.view-subtitle { -fx-font-size: 13.5px; -fx-text-fill: -rr-text-muted; }
+.section-title { -fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: -rr-text; }
+.eyebrow { -fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: -rr-text-subtle; }
+
+/* ==========================================================================
+   App shell & sidebar
+   ========================================================================== */
+
+.app-content { -fx-background-color: -rr-bg; }
+
+.sidebar {
+    -fx-background-color: -rr-side-bg;
+    -fx-border-color: transparent -rr-side-border transparent transparent;
+    -fx-padding: 18 12 14 12;
+    -fx-spacing: 4;
+}
+.sidebar.collapsed { -fx-padding: 18 10 14 10; }
+
+.brand { -fx-padding: 2 8 18 8; -fx-spacing: 10; -fx-alignment: center-left; }
+.sidebar.collapsed .brand { -fx-padding: 2 0 18 0; -fx-alignment: center; }
+.brand-mark {
+    -fx-background-color: -rr-accent;
+    -fx-background-radius: 10;
+    -fx-min-width: 36; -fx-min-height: 36; -fx-pref-width: 36; -fx-pref-height: 36; -fx-max-width: 36; -fx-max-height: 36;
+}
+.brand-title { -fx-text-fill: -rr-side-text-strong; -fx-font-size: 16px; -fx-font-weight: bold; }
+.brand-sub { -fx-text-fill: -rr-side-text; -fx-font-size: 11px; }
+
+.nav-caption { -fx-text-fill: rgba(255,255,255,0.38); -fx-font-size: 10.5px; -fx-font-weight: bold; -fx-padding: 10 12 6 12; }
+
+.nav-item {
+    -fx-background-color: transparent;
+    -fx-background-radius: 10;
+    -fx-text-fill: -rr-side-text;
+    -fx-font-size: 13.5px;
+    -fx-padding: 10 12 10 12;
+    -fx-graphic-text-gap: 12;
+    -fx-alignment: center-left;
+    -fx-cursor: hand;
+    -fx-border-width: 0;
+}
+.nav-item .icon { -fx-fill: -rr-side-text; }
+.nav-item:hover { -fx-background-color: -rr-side-hover; -fx-text-fill: -rr-side-text-strong; }
+.nav-item:hover .icon { -fx-fill: -rr-side-text-strong; }
+.nav-item:selected { -fx-background-color: -rr-side-active; -fx-text-fill: -rr-side-text-strong; -fx-font-weight: bold; }
+.nav-item:selected .icon { -fx-fill: -rr-accent; }
+.nav-item:focused { -fx-background-insets: 0; }
+.sidebar.collapsed .nav-item { -fx-alignment: center; -fx-padding: 11 0 11 0; }
+
+.theme-switch {
+    -fx-background-color: rgba(255,255,255,0.06);
+    -fx-background-radius: 10;
+    -fx-padding: 3;
+    -fx-spacing: 2;
+}
+.theme-switch .toggle-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 8;
+    -fx-padding: 7 6 7 6;
+    -fx-cursor: hand;
+    -fx-text-fill: -rr-side-text;
+    -fx-font-size: 12.5px;
+    -fx-font-weight: bold;
+    -fx-graphic-text-gap: 6;
+    -fx-background-insets: 0;
+}
+.theme-switch .toggle-button .icon { -fx-fill: -rr-side-text; }
+.theme-switch .toggle-button:hover { -fx-text-fill: -rr-side-text-strong; }
+.theme-switch .toggle-button:hover .icon { -fx-fill: -rr-side-text-strong; }
+.theme-switch .toggle-button:selected { -fx-background-color: rgba(255,255,255,0.14); -fx-text-fill: -rr-side-text-strong; }
+.theme-switch .toggle-button:selected .icon { -fx-fill: -rr-accent; }
+
+.nav-scroll, .nav-scroll > .viewport { -fx-background-color: transparent; -fx-background: transparent; -fx-padding: 0; }
+.nav-scroll .scroll-bar .thumb { -fx-background-color: rgba(255,255,255,0.18); }
+.sidebar.short { -fx-padding: 10 12 8 12; }
+.sidebar.short.collapsed { -fx-padding: 10 10 8 10; }
+.sidebar.short .brand { -fx-padding: 0 8 8 8; }
+.sidebar.short.collapsed .brand { -fx-padding: 0 0 8 0; }
+.sidebar.short .nav-item { -fx-padding: 7 12 7 12; }
+.sidebar.short.collapsed .nav-item { -fx-padding: 8 0 8 0; }
+
+.side-meta { -fx-text-fill: rgba(255,255,255,0.38); -fx-font-size: 10.5px; }
+
+/* ==========================================================================
+   Views, cards, stat tiles
+   ========================================================================== */
+
+.view { -fx-background-color: -rr-bg; }
+
+.card {
+    -fx-background-color: -rr-surface;
+    -fx-background-radius: 14;
+    -fx-border-color: -rr-border;
+    -fx-border-radius: 14;
+    -fx-border-width: 1;
+    -fx-padding: 18;
+    -fx-effect: dropshadow(gaussian, -rr-shadow, 14, 0, 0, 3);
+}
+.card.flush { -fx-padding: 0; }
+.card.hoverable:hover { -fx-border-color: -rr-border-strong; -fx-effect: dropshadow(gaussian, -rr-shadow-strong, 18, 0, 0, 6); }
+
+.card-title { -fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: -rr-text; }
+.card-subtitle { -fx-font-size: 12px; -fx-text-fill: -rr-text-muted; }
+
+.stat-value { -fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: -rr-text; }
+.stat-label { -fx-font-size: 12.5px; -fx-text-fill: -rr-text-muted; }
+.stat-foot { -fx-font-size: 11.5px; -fx-text-fill: -rr-text-subtle; }
+.stat-icon {
+    -fx-background-radius: 10;
+    -fx-min-width: 38; -fx-min-height: 38; -fx-pref-width: 38; -fx-pref-height: 38; -fx-max-width: 38; -fx-max-height: 38;
+    -fx-background-color: -rr-primary-soft;
+}
+.stat-icon .icon { -fx-fill: -rr-primary; }
+.stat-icon.tone-accent { -fx-background-color: -rr-warning-soft; }
+.stat-icon.tone-accent .icon { -fx-fill: -rr-warning; }
+.stat-icon.tone-blue { -fx-background-color: -rr-group-b-soft; }
+.stat-icon.tone-blue .icon { -fx-fill: -rr-group-b; }
+.stat-icon.tone-red { -fx-background-color: -rr-danger-soft; }
+.stat-icon.tone-red .icon { -fx-fill: -rr-danger; }
+
+.divider { -fx-background-color: -rr-border; -fx-min-height: 1; -fx-pref-height: 1; -fx-max-height: 1; }
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+.btn {
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-padding: 9 16 9 16;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-graphic-text-gap: 8;
+    -fx-background-insets: 0;
+    -fx-border-insets: 0;
+}
+.btn:focused { -fx-effect: dropshadow(gaussian, derive(-rr-primary, 0%), 0, 0, 0, 0); }
+
+.btn-primary { -fx-background-color: -rr-primary; -fx-text-fill: -rr-on-primary; }
+.btn-primary .icon { -fx-fill: -rr-on-primary; }
+.btn-primary:hover { -fx-background-color: -rr-primary-hover; }
+.btn-primary:pressed { -fx-opacity: 0.88; }
+
+.btn-secondary {
+    -fx-background-color: -rr-surface;
+    -fx-border-color: -rr-border-strong;
+    -fx-border-width: 1;
+    -fx-text-fill: -rr-text;
+}
+.btn-secondary .icon { -fx-fill: -rr-text-muted; }
+.btn-secondary:hover { -fx-background-color: -rr-surface-2; }
+.btn-secondary:pressed { -fx-background-color: -rr-surface-3; }
+
+.btn-ghost { -fx-background-color: transparent; -fx-text-fill: -rr-text-muted; }
+.btn-ghost .icon { -fx-fill: -rr-text-muted; }
+.btn-ghost:hover { -fx-background-color: -rr-surface-3; -fx-text-fill: -rr-text; }
+.btn-ghost:hover .icon { -fx-fill: -rr-text; }
+
+.btn-danger { -fx-background-color: -rr-danger; -fx-text-fill: white; }
+.btn-danger .icon { -fx-fill: white; }
+.btn-danger:hover { -fx-opacity: 0.9; }
+
+.btn-small { -fx-padding: 6 11 6 11; -fx-font-size: 12px; -fx-background-radius: 8; -fx-border-radius: 8; }
+.btn:disabled { -fx-opacity: 0.45; }
+
+.icon-btn {
+    -fx-background-color: transparent;
+    -fx-background-radius: 8;
+    -fx-padding: 7;
+    -fx-cursor: hand;
+    -fx-background-insets: 0;
+}
+.icon-btn .icon { -fx-fill: -rr-text-muted; }
+.icon-btn:hover { -fx-background-color: -rr-surface-3; }
+.icon-btn:hover .icon { -fx-fill: -rr-text; }
+.icon-btn.danger:hover { -fx-background-color: -rr-danger-soft; }
+.icon-btn.danger:hover .icon { -fx-fill: -rr-danger; }
+
+/* ---- segmented controls / chips ---- */
+.segmented {
+    -fx-background-color: -rr-surface-3;
+    -fx-background-radius: 10;
+    -fx-padding: 3;
+    -fx-spacing: 2;
+}
+.segmented .toggle-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 8;
+    -fx-text-fill: -rr-text-muted;
+    -fx-font-weight: bold;
+    -fx-font-size: 12.5px;
+    -fx-padding: 6 12 6 12;
+    -fx-cursor: hand;
+    -fx-background-insets: 0;
+    -fx-graphic-text-gap: 6;
+}
+.segmented .toggle-button .icon { -fx-fill: -rr-text-muted; }
+.segmented .toggle-button:hover { -fx-text-fill: -rr-text; }
+.segmented .toggle-button:selected {
+    -fx-background-color: -rr-surface;
+    -fx-text-fill: -rr-text;
+    -fx-effect: dropshadow(gaussian, -rr-shadow-strong, 4, 0, 0, 1);
+}
+.segmented .toggle-button:selected .icon { -fx-fill: -rr-primary; }
+
+/* ==========================================================================
+   Inputs
+   ========================================================================== */
+
+.text-field, .spinner, .combo-box {
+    -fx-background-color: -rr-surface-2;
+    -fx-background-radius: 10;
+    -fx-border-color: -rr-border;
+    -fx-border-radius: 10;
+    -fx-border-width: 1;
+    -fx-text-fill: -rr-text;
+    -fx-prompt-text-fill: -rr-text-subtle;
+    -fx-highlight-fill: -rr-primary;
+    -fx-highlight-text-fill: -rr-on-primary;
+    -fx-background-insets: 0;
+}
+.text-field { -fx-padding: 9 12 9 12; }
+.text-field:focused, .spinner:focused, .combo-box:focused {
+    -fx-border-color: -rr-primary;
+    -fx-background-color: -rr-surface;
+}
+.text-field.invalid { -fx-border-color: -rr-danger; }
+
+.spinner .text-field { -fx-background-color: transparent; -fx-border-width: 0; }
+.spinner .increment-arrow-button, .spinner .decrement-arrow-button {
+    -fx-background-color: transparent;
+    -fx-padding: 4 8 4 8;
+}
+.spinner .increment-arrow-button:hover, .spinner .decrement-arrow-button:hover { -fx-background-color: -rr-surface-3; }
+.spinner .increment-arrow, .spinner .decrement-arrow { -fx-background-color: -rr-text-muted; }
+
+.combo-box { -fx-padding: 2 4 2 4; }
+.combo-box .text-field, .combo-box .text-field:focused {
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+    -fx-padding: 7 8 7 8;
+}
+.combo-box .list-cell { -fx-text-fill: -rr-text; -fx-background-color: transparent; -fx-padding: 6 6 6 6; }
+.combo-box .arrow-button { -fx-background-color: transparent; }
+.combo-box .arrow { -fx-background-color: -rr-text-muted; }
+.combo-box-popup .list-view {
+    -fx-background-color: -rr-surface;
+    -fx-background-radius: 10;
+    -fx-border-color: -rr-border;
+    -fx-border-radius: 10;
+    -fx-padding: 4;
+    -fx-effect: dropshadow(gaussian, -rr-shadow-strong, 16, 0, 0, 6);
+}
+.combo-box-popup .list-view .list-cell { -fx-background-color: transparent; -fx-text-fill: -rr-text; -fx-padding: 7 10 7 10; -fx-background-radius: 6; }
+.combo-box-popup .list-view .list-cell:hover { -fx-background-color: -rr-surface-3; }
+.combo-box-popup .list-view .list-cell:selected { -fx-background-color: -rr-primary-soft; -fx-text-fill: -rr-text; }
+
+.search-box {
+    -fx-background-color: -rr-surface;
+    -fx-background-radius: 10;
+    -fx-border-color: -rr-border;
+    -fx-border-radius: 10;
+    -fx-padding: 0 4 0 12;
+    -fx-spacing: 6;
+    -fx-alignment: center-left;
+}
+.search-box:focus-within { -fx-border-color: -rr-primary; }
+.search-box .icon { -fx-fill: -rr-text-subtle; }
+.search-box .text-field { -fx-background-color: transparent; -fx-border-width: 0; -fx-padding: 9 4 9 0; }
+
+.field-label { -fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: -rr-text-muted; }
+.field-hint { -fx-font-size: 11px; -fx-text-fill: -rr-text-subtle; }
+.field-error { -fx-font-size: 11.5px; -fx-text-fill: -rr-danger; }
+
+/* ==========================================================================
+   Group badges, avatars, progress
+   ========================================================================== */
+
+.badge {
+    -fx-background-radius: 999;
+    -fx-padding: 3 9 3 9;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+.badge.group-a { -fx-background-color: -rr-group-a-soft; -fx-text-fill: -rr-group-a-ink; }
+.badge.group-b { -fx-background-color: -rr-group-b-soft; -fx-text-fill: -rr-group-b-ink; }
+.badge.group-c { -fx-background-color: -rr-group-c-soft; -fx-text-fill: -rr-group-c-ink; }
+.badge.group-d { -fx-background-color: -rr-group-d-soft; -fx-text-fill: -rr-group-d-ink; }
+.badge.ok { -fx-background-color: -rr-success-soft; -fx-text-fill: -rr-success; }
+.badge.warn { -fx-background-color: -rr-warning-soft; -fx-text-fill: -rr-warning; }
+.badge.neutral { -fx-background-color: -rr-surface-3; -fx-text-fill: -rr-text-muted; }
+
+.dot { -fx-background-radius: 999; -fx-min-width: 10; -fx-min-height: 10; -fx-max-width: 10; -fx-max-height: 10; }
+.dot.group-a, .bar.group-a, .stripe.group-a { -fx-background-color: -rr-group-a; }
+.dot.group-b, .bar.group-b, .stripe.group-b { -fx-background-color: -rr-group-b; }
+.dot.group-c, .bar.group-c, .stripe.group-c { -fx-background-color: -rr-group-c; }
+.dot.group-d, .bar.group-d, .stripe.group-d { -fx-background-color: -rr-group-d; }
+
+.avatar { -fx-background-radius: 999; }
+.avatar.group-a { -fx-background-color: -rr-group-a-soft; }
+.avatar.group-b { -fx-background-color: -rr-group-b-soft; }
+.avatar.group-c { -fx-background-color: -rr-group-c-soft; }
+.avatar.group-d { -fx-background-color: -rr-group-d-soft; }
+.avatar-text { -fx-font-weight: bold; -fx-font-size: 15px; }
+.avatar.group-a .avatar-text { -fx-text-fill: -rr-group-a-ink; }
+.avatar.group-b .avatar-text { -fx-text-fill: -rr-group-b-ink; }
+.avatar.group-c .avatar-text { -fx-text-fill: -rr-group-c-ink; }
+.avatar.group-d .avatar-text { -fx-text-fill: -rr-group-d-ink; }
+
+.track { -fx-background-color: -rr-surface-3; -fx-background-radius: 999; -fx-min-height: 8; -fx-pref-height: 8; -fx-max-height: 8; }
+.bar { -fx-background-radius: 999; -fx-min-height: 8; -fx-pref-height: 8; -fx-max-height: 8; }
+.bar.tall, .track.tall { -fx-min-height: 22; -fx-pref-height: 22; -fx-max-height: 22; -fx-background-radius: 6; }
+
+/* lane chip shown in race field cards and standings */
+.lane-chip {
+    -fx-background-radius: 8;
+    -fx-min-width: 30; -fx-min-height: 30; -fx-pref-width: 30; -fx-pref-height: 30; -fx-max-width: 30; -fx-max-height: 30;
+}
+.lane-chip.group-a { -fx-background-color: -rr-group-a; }
+.lane-chip.group-b { -fx-background-color: -rr-group-b; }
+.lane-chip.group-c { -fx-background-color: -rr-group-c; }
+.lane-chip.group-d { -fx-background-color: -rr-group-d; }
+.lane-chip .label { -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 13px; }
+.theme-dark .lane-chip .label { -fx-text-fill: #0B100D; }
+
+/* ==========================================================================
+   Horses view
+   ========================================================================== */
+
+.horse-card { -fx-padding: 0; }
+.horse-shell { -fx-background-color: transparent; -fx-effect: dropshadow(gaussian, -rr-shadow, 14, 0, 0, 3); }
+.horse-shell:hover { -fx-effect: dropshadow(gaussian, -rr-shadow-strong, 18, 0, 0, 6); }
+.horse-body { -fx-background-color: -rr-surface; -fx-background-radius: 14; }
+.horse-border { -fx-background-color: transparent; -fx-border-color: -rr-border; -fx-border-radius: 14; -fx-border-width: 1; }
+.horse-shell:hover .horse-border { -fx-border-color: -rr-border-strong; }
+.horse-body .stripe { -fx-min-height: 4; -fx-pref-height: 4; -fx-max-height: 4; }
+.horse-name { -fx-font-size: 15.5px; -fx-font-weight: bold; -fx-text-fill: -rr-text; }
+.metric-value { -fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: -rr-text; }
+.metric-label { -fx-font-size: 11px; -fx-text-fill: -rr-text-subtle; }
+.metric-box { -fx-background-color: -rr-surface-2; -fx-background-radius: 10; -fx-padding: 8 10 8 10; }
+
+.empty-state { -fx-padding: 48; -fx-spacing: 10; -fx-alignment: center; }
+.empty-icon { -fx-background-color: -rr-surface-3; -fx-background-radius: 999; -fx-min-width: 64; -fx-min-height: 64; -fx-max-width: 64; -fx-max-height: 64; }
+.empty-icon .icon { -fx-fill: -rr-text-subtle; }
+
+/* ==========================================================================
+   Table
+   ========================================================================== */
+
+.table-view {
+    -fx-background-color: -rr-surface;
+    -fx-background-radius: 14;
+    -fx-border-color: -rr-border;
+    -fx-border-radius: 14;
+    -fx-padding: 4;
+    -fx-table-cell-border-color: transparent;
+    -fx-background-insets: 0;
+}
+.table-view:focused { -fx-background-insets: 0; }
+.table-view .column-header-background { -fx-background-color: -rr-surface; -fx-background-radius: 12 12 0 0; }
+.table-view .column-header, .table-view .filler {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent -rr-border transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-size: 40;
+}
+.table-view .column-header .label { -fx-text-fill: -rr-text-subtle; -fx-font-size: 11.5px; -fx-font-weight: bold; -fx-padding: 0 10 0 10; -fx-alignment: center-left; }
+.table-view .column-header .arrow { -fx-background-color: -rr-text-subtle; }
+.table-row-cell { -fx-background-color: -rr-surface; -fx-cell-size: 50; -fx-border-color: transparent transparent -rr-border transparent; -fx-border-width: 0 0 1 0; }
+.table-row-cell:hover { -fx-background-color: -rr-surface-2; }
+.table-row-cell:selected { -fx-background-color: -rr-primary-soft; }
+.table-row-cell:empty { -fx-border-width: 0; -fx-background-color: -rr-surface; }
+.table-cell { -fx-text-fill: -rr-text; -fx-padding: 0 10 0 10; -fx-alignment: center-left; }
+.table-row-cell:selected .table-cell { -fx-text-fill: -rr-text; }
+.table-view .placeholder .label { -fx-text-fill: -rr-text-muted; }
+.table-view .corner { -fx-background-color: transparent; }
+
+/* ==========================================================================
+   Scroll panes & bars
+   ========================================================================== */
+
+.scroll-pane, .scroll-pane > .viewport { -fx-background-color: transparent; -fx-background: transparent; -fx-padding: 0; }
+.scroll-pane:focused { -fx-background-insets: 0; }
+.scroll-bar { -fx-background-color: transparent; -fx-padding: 2; }
+.scroll-bar .thumb { -fx-background-color: -rr-border-strong; -fx-background-radius: 999; -fx-background-insets: 0; }
+.scroll-bar .thumb:hover { -fx-background-color: -rr-text-subtle; }
+.scroll-bar .track, .scroll-bar .track-background { -fx-background-color: transparent; }
+.scroll-bar .increment-button, .scroll-bar .decrement-button { -fx-padding: 0; -fx-background-color: transparent; }
+.scroll-bar .increment-arrow, .scroll-bar .decrement-arrow { -fx-shape: " "; -fx-padding: 0; }
+.scroll-bar:vertical { -fx-pref-width: 10; }
+.scroll-bar:horizontal { -fx-pref-height: 10; }
+
+/* ==========================================================================
+   Race view
+   ========================================================================== */
+
+.track-card { -fx-padding: 0; }
+.track-header { -fx-padding: 14 18 14 18; -fx-spacing: 12; -fx-alignment: center-left; }
+.race-clock { -fx-font-family: "Consolas"; -fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: -rr-text; }
+.race-status { -fx-font-size: 12px; -fx-font-weight: bold; }
+
+.runner-row { -fx-padding: 9 10 9 10; -fx-spacing: 10; -fx-alignment: center-left; -fx-background-radius: 10; }
+.runner-row:hover { -fx-background-color: -rr-surface-2; }
+.runner-row.leader { -fx-background-color: -rr-surface-2; }
+.runner-pos { -fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: -rr-text-muted; -fx-min-width: 30; }
+.runner-name { -fx-font-size: 13.5px; -fx-font-weight: bold; -fx-text-fill: -rr-text; }
+.runner-meta { -fx-font-size: 11.5px; -fx-text-fill: -rr-text-muted; }
+.runner-time { -fx-font-family: "Consolas"; -fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: -rr-text; }
+.odds { -fx-font-family: "Consolas"; -fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: -rr-accent; }
+
+.podium-block { -fx-background-radius: 12 12 4 4; -fx-alignment: top-center; -fx-padding: 10 6 10 6; }
+.podium-block.p1 { -fx-background-color: -rr-warning-soft; }
+.podium-block.p2 { -fx-background-color: -rr-surface-3; }
+.podium-block.p3 { -fx-background-color: -rr-group-c-soft; }
+.podium-rank { -fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: -rr-text; }
+.podium-name { -fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: -rr-text; -fx-text-alignment: center; }
+
+.banner { -fx-background-radius: 12; -fx-padding: 12 14 12 14; -fx-spacing: 10; -fx-alignment: center-left; }
+.banner.warn { -fx-background-color: -rr-warning-soft; }
+.banner.warn .label { -fx-text-fill: -rr-warning; }
+.banner.warn .icon { -fx-fill: -rr-warning; }
+.banner.ok { -fx-background-color: -rr-success-soft; }
+.banner.ok .label { -fx-text-fill: -rr-success; }
+.banner.ok .icon { -fx-fill: -rr-success; }
+/* buttons inside banners keep their own icon colours */
+.banner .btn-primary .icon { -fx-fill: -rr-on-primary; }
+.banner .btn-secondary .icon { -fx-fill: -rr-text-muted; }
+
+/* ==========================================================================
+   Overlays: dialogs & toasts
+   ========================================================================== */
+
+.overlay-scrim { -fx-background-color: -rr-scrim; }
+.dialog {
+    -fx-background-color: -rr-surface;
+    -fx-background-radius: 16;
+    -fx-border-color: -rr-border;
+    -fx-border-radius: 16;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.35), 40, 0, 0, 14);
+}
+.dialog-header { -fx-padding: 20 22 6 22; -fx-spacing: 12; -fx-alignment: center-left; }
+.dialog-title { -fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: -rr-text; }
+.dialog-body { -fx-padding: 8 22 8 22; }
+.dialog-footer { -fx-padding: 14 22 20 22; -fx-spacing: 10; -fx-alignment: center-right; }
+
+.toast {
+    -fx-background-color: -rr-surface;
+    -fx-background-radius: 12;
+    -fx-border-color: -rr-border;
+    -fx-border-radius: 12;
+    -fx-padding: 12 16 12 14;
+    -fx-spacing: 10;
+    -fx-alignment: center-left;
+    -fx-effect: dropshadow(gaussian, -rr-shadow-strong, 22, 0, 0, 8);
+}
+.toast .label { -fx-text-fill: -rr-text; -fx-font-size: 13px; }
+.toast.success .icon { -fx-fill: -rr-success; }
+.toast.error .icon { -fx-fill: -rr-danger; }
+.toast.info .icon { -fx-fill: -rr-primary; }
+
+.tooltip {
+    -fx-background-color: #1B1F1C;
+    -fx-text-fill: #F2F5F3;
+    -fx-background-radius: 6;
+    -fx-font-size: 12px;
+    -fx-padding: 5 9 5 9;
+}
+
+/* misc */
+.radio-button { -fx-text-fill: -rr-text; }
+.check-box { -fx-text-fill: -rr-text; }
+.separator .line { -fx-border-color: -rr-border; }
+.kbd {
+    -fx-background-color: -rr-surface-3;
+    -fx-background-radius: 5;
+    -fx-padding: 1 6 1 6;
+    -fx-font-family: "Consolas";
+    -fx-font-size: 11px;
+    -fx-text-fill: -rr-text-muted;
+}
+
+/* ---- Custom window frame ---- */
+.window-border {
+    -fx-background-color: transparent;
+    -fx-border-color: -rr-border-strong;
+    -fx-border-width: 1;
+    -fx-border-radius: 12;
+}
+.window-frame.maximized .window-border { -fx-border-width: 0; }
+.title-bar {
+    -fx-background-color: transparent;
+    -fx-min-height: 34;
+    -fx-pref-height: 34;
+    -fx-max-height: 34;
+    -fx-padding: 0 6 0 0;
+}
+.window-btn {
+    -fx-background-color: transparent;
+    -fx-background-radius: 8;
+    -fx-padding: 0;
+    -fx-min-width: 38;
+    -fx-pref-width: 38;
+    -fx-min-height: 26;
+    -fx-pref-height: 26;
+    -fx-max-height: 26;
+    -fx-cursor: hand;
+}
+.window-btn:hover { -fx-background-color: -rr-surface-3; }
+.window-btn:pressed { -fx-background-color: -rr-border; }
+.window-btn-close:hover { -fx-background-color: -rr-danger; }
+.window-btn-close:hover .icon { -fx-fill: white; }
+
+/* ==========================================================================
+   Charts (Statistics)
+   ========================================================================== */
+
+.chart { -fx-background-color: transparent; }
+.chart-content, .chart-plot-background { -fx-background-color: transparent; }
+.chart .axis { -fx-tick-label-fill: -rr-text-muted; }
+.chart .axis-label { -fx-text-fill: -rr-text-muted; }
+.chart .axis-tick-mark, .chart .axis-minor-tick-mark, .chart .axis:top, .chart .axis:bottom, .chart .axis:left, .chart .axis:right { -fx-stroke: -rr-border; -fx-border-color: -rr-border; }
+.chart-vertical-grid-lines, .chart-horizontal-grid-lines { -fx-stroke: -rr-border; }
+.chart-title, .chart-legend { -fx-background-color: transparent; }
+.chart-legend-item { -fx-text-fill: -rr-text; }
+.chart-series-line { -fx-stroke: -rr-primary; -fx-stroke-width: 2.5px; }
+.chart-line-symbol { -fx-background-color: -rr-primary, -rr-surface; }
+.chart-pie { -fx-border-color: -rr-surface; }
+.chart-pie-label { -fx-fill: -rr-text; }
