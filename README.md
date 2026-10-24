@@ -63,9 +63,9 @@ The codebase keeps a clean separation between views, services, domain models, an
 
 | Light | Dark |
 |---|---|
-| ![Dashboard light](docs/screenshots/dashboard-1360-light.png) | ![Dashboard dark](docs/screenshots/dashboard-1360-dark.png) |
-| ![Race in progress](docs/screenshots/race-mid-light.png) | ![Race results](docs/screenshots/race-done-dark.png) |
-| ![Horses](docs/screenshots/horses-1360-light.png) | ![Horses, narrow window](docs/screenshots/horses-760-dark.png) |
+| ![Dashboard light](rapid%20run%20horse%20racing%20simulator/docs/screenshots/dashboard-1360-light.png) | ![Dashboard dark](rapid%20run%20horse%20racing%20simulator/docs/screenshots/dashboard-1360-dark.png) |
+| ![Race in progress](rapid%20run%20horse%20racing%20simulator/docs/screenshots/race-mid-light.png) | ![Race results](rapid%20run%20horse%20racing%20simulator/docs/screenshots/race-done-dark.png) |
+| ![Horses](rapid%20run%20horse%20racing%20simulator/docs/screenshots/horses-1360-light.png) | ![Horses, narrow window](rapid%20run%20horse%20racing%20simulator/docs/screenshots/horses-760-dark.png) |
 
 ---
 
